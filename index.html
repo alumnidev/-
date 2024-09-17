@@ -3,31 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
     <title>Alumnidev - Home</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header>
-    <h1>Welcome to Alumnidev</h1>
     <nav>
-        <ul>
+        <!-- Logo on the left -->
+        <div class="logo">
+            <img src="images/Screenshot%202024-09-16%20193207.png" alt="Alumnidev Logo">
+        </div>
+        <!-- Navigation Menu -->
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <!-- Dark Mode Toggle -->
+        <button id="mode-toggle">
+            <span id="icon">🌞</span>
+        </button>
     </nav>
 </header>
 
-<section>
-    <h2>Web Development for Your Business</h2>
-    <p>We provide high-quality web development services to bring your vision to life.</p>
-</section>
+<main>
+    <section id="welcome">
+        <h1>Welcome to AlumniDev</h1>
+        <p>Web development services tailored to your business needs.</p>
+        <p>Make your visions come to life today.</p>
+    </section>
+</main>
 
 <footer>
     <p>&copy; 2024 Alumnidev. All rights reserved.</p>
 </footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>

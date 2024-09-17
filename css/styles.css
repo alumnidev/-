@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,43 +6,105 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
 }
 
 header {
-    background-color: #0073e6;
-    color: white;
-    padding: 10px 0;
+    background-color: var(--nav-bg-color);
+    padding: 15px 0;
+    transition: background-color 0.5s ease; /* Smooth transition for navbar */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--nav-text-color);
+    transition: color 0.5s ease; /* Smooth transition for link colors */
+}
+
+.nav-links li a:hover {
+    color: var(--button-bg-color);
+}
+
+#mode-toggle {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#mode-toggle:hover {
+    opacity: 0.9;
+}
+
+main {
+    padding: 40px 20px;
     text-align: center;
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-header nav ul li {
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-section {
-    padding: 20px;
-    margin: 20px 0;
+p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 footer {
-    background-color: #0073e6;
-    color: white;
+    background-color: var(--nav-bg-color);
+    color: var(--nav-text-color);
     text-align: center;
     padding: 10px 0;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Footer transition */
+}
+
+/* Dark mode styling */
+body.dark-mode {
+    --bg-color: #222;
+    --text-color: #f0f0f0;
+    --nav-bg-color: #333;
+    --nav-text-color: #f0f0f0;
+    --button-bg-color: #555;
+    --button-text-color: #f0f0f0;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
