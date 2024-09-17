@@ -89,6 +89,8 @@ main {
 h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
 p {
@@ -96,6 +98,8 @@ p {
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 2s ease-in-out forwards;
 }
 
 /* Footer Styling */
@@ -116,6 +120,8 @@ body.dark-mode {
     --button-bg-color: #3b4d61; /* Button color */
     --button-text-color: #f0f0f0; /* Button text color */
     transition: background-color 0.5s ease, color 0.5s ease;
+    --monitor-bg-color: #14161b;
+    --monitor-border-color: #3b4d61;
 }
 
 body.dark-mode header {
@@ -257,3 +263,64 @@ footer {
     height: 1px;
     margin: 20px auto;
 }
+
+
+
+/* Define the fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Apply fade-in to the body text */
+body.fade-in-text {
+    animation: fadeIn 2s ease-in-out;
+    opacity: 1;
+}
+
+/* Monitor styling */
+.monitor {
+    width: 650px;
+    height: 380px;
+    border-radius: 12px;
+    background-color: var(--monitor-bg-color);
+    border: 6px solid var(--monitor-border-color);
+    margin: 80px auto;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in animation */
+}
+
+/* Container for the logo */
+.logo-container {
+    text-align: center;
+    margin-top: 50px; /* Adjust as needed */
+}
+
+/* Logo styling */
+.fading-logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in animation */
+}
+
+/* Ensure visibility in dark mode */
+body.dark-mode .first-line,
+body.dark-mode .logo-container,
+body.dark-mode .monitor {
+    opacity: 1;
+}
+
+
+
+

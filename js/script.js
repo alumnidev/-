@@ -1,3 +1,5 @@
+
+//toggling the back and white button
 const modeToggle = document.getElementById('mode-toggle');
 const icon = document.getElementById('icon');
 
@@ -21,3 +23,23 @@ modeToggle.addEventListener('click', () => {
         localStorage.setItem('theme', 'light'); // Save preference
     }
 });
+
+
+
+
+
+//creating the monitor on the front page.
+
+
+
+
+
+
+
+
+
+
+
+//the building blocks creating the webpage on the homepage
+
+
