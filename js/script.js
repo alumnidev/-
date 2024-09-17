@@ -28,8 +28,22 @@ modeToggle.addEventListener('click', () => {
 
 
 
-//creating the monitor on the front page.
+//scroll effect on homepage
+document.addEventListener("DOMContentLoaded", function() {
+    const divs = document.querySelectorAll(".mode-sensitive-div");
 
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in");
+            }
+        });
+    }, {
+        threshold: 0.1 // Trigger when 10% of the div is visible
+    });
+
+    divs.forEach(div => observer.observe(div));
+});
 
 
 

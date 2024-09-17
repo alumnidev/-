@@ -93,6 +93,10 @@ h1 {
     animation: fadeIn 2s ease-in-out forwards;
 }
 
+.welcome {
+    padding-top: 30px;
+}
+
 p {
     font-size: 1.2rem;
     max-width: 700px;
@@ -100,6 +104,14 @@ p {
     line-height: 1.6;
     opacity: 0; /* Start hidden */
     animation: fadeIn 2s ease-in-out forwards;
+}
+
+.opener1, .opener2 {
+    font-size: 1.5rem;
+}
+
+.opener2 {
+    padding-bottom: 30px;
 }
 
 /* Footer Styling */
@@ -482,6 +494,7 @@ body.dark-mode #mode-sensitive-div {
 
 
 
+
 /* Section styling */
 #blocks-section {
     display: flex;
@@ -489,8 +502,8 @@ body.dark-mode #mode-sensitive-div {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100vh;
-    margin-top: 50px; /* Move the section further down */
+    min-height: 80vh;
+    margin-top: 30px;
     transition: background-color 0.5s ease;
 }
 
@@ -501,7 +514,7 @@ body:not(.dark-mode) #blocks-section {
 
 /* Dark mode background for section */
 body.dark-mode #blocks-section {
-    /*background-color: var(--bg-color);*/
+    /*background-color: var(--bg-color); */
 }
 
 /* Container for the two mode-sensitive divs */
@@ -517,32 +530,82 @@ body.dark-mode #blocks-section {
 /* Mode-Sensitive Div */
 .mode-sensitive-div {
     width: 45%;
-    height: 250px; /* Adjust height as necessary */
+    height: 250px;
     padding: 30px;
     border-radius: 10px;
-    transition: background-color 0.5s ease;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Slide from below */
+    transition: background-color 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Ensure fade-in effect when in view */
+.mode-sensitive-div.fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Return to original position */
 }
 
 /* Light mode for the div */
 body:not(.dark-mode) .mode-sensitive-div {
-    background-color: #fafafa; /* Light background */
+    background-color: #fafafa;
 }
 
 /* Dark mode for the div */
 body.dark-mode .mode-sensitive-div {
-    background-color: var(--nav-bg-color); /* Dark background */
+    background-color: var(--nav-bg-color);
+}
+
+/* Increase icon size and add subtle movement */
+.mode-sensitive-div i {
+    font-size: 60px;
+    color: var(--icon-color);
+    animation: iconMove 2s infinite ease-in-out; /* Movement effect */
+}
+
+/* Keyframes for subtle movement */
+@keyframes iconMove {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px); /* Move up slightly */
+    }
+}
+
+/* Increase font size */
+.mode-sensitive-div p {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* Responsive for smaller screens */
 @media (max-width: 768px) {
     #mode-sensitive-div-container {
-        flex-direction: column; /* Stack the divs vertically */
+        flex-direction: column;
     }
 
     .mode-sensitive-div {
-        width: 100%; /* Full width in mobile view */
+        width: 100%;
+    }
+
+    /* Adjust icon size on smaller screens */
+    .mode-sensitive-div i {
+        font-size: 40px;
+    }
+
+    /* Adjust text size on smaller screens */
+    .mode-sensitive-div p {
+        font-size: 1.2rem;
     }
 }
+
+
+
+
+
 
 
 
