@@ -485,6 +485,7 @@ body.dark-mode #mode-sensitive-div {
 /* Section styling */
 #blocks-section {
     display: flex;
+    background-color: var(--bg-color);
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -495,12 +496,12 @@ body.dark-mode #mode-sensitive-div {
 
 /* Light mode background for section */
 body:not(.dark-mode) #blocks-section {
-    background-color: #fafafa;
+    /*background-color: var(--bg-color)*/
 }
 
 /* Dark mode background for section */
 body.dark-mode #blocks-section {
-    background-color: #222;
+    /*background-color: var(--bg-color);*/
 }
 
 /* Container for the two mode-sensitive divs */
@@ -524,12 +525,12 @@ body.dark-mode #blocks-section {
 
 /* Light mode for the div */
 body:not(.dark-mode) .mode-sensitive-div {
-    background-color: #f5f5f5; /* Light background */
+    background-color: #fafafa; /* Light background */
 }
 
 /* Dark mode for the div */
 body.dark-mode .mode-sensitive-div {
-    background-color: #333; /* Dark background */
+    background-color: var(--nav-bg-color); /* Dark background */
 }
 
 /* Responsive for smaller screens */
