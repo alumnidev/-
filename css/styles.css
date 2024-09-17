@@ -82,12 +82,12 @@ nav {
 
 /* Main Content Styling */
 main {
-    padding: 40px 20px;
+    padding: 60px 30px;
     text-align: center;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     margin-bottom: 20px;
     opacity: 0; /* Start hidden */
     animation: fadeIn 2s ease-in-out forwards;
@@ -284,8 +284,8 @@ body.fade-in-text {
 
 /* Monitor styling */
 .monitor {
-    width: 650px;
-    height: 380px;
+    width: 50%;
+    height: 40%;
     border-radius: 12px;
     background-color: var(--monitor-bg-color);
     border: 6px solid var(--monitor-border-color);
@@ -300,26 +300,9 @@ body.fade-in-text {
     animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in animation */
 }
 
-/* Container for the logo */
-.logo-container {
-    text-align: center;
-    margin-top: 50px; /* Adjust as needed */
-}
 
-/* Logo styling */
-.fading-logo {
-    width: 150px; /* Adjust size as needed */
-    height: auto;
-    opacity: 0; /* Start hidden */
-    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in animation */
-}
 
-/* Ensure visibility in dark mode */
-body.dark-mode .first-line,
-body.dark-mode .logo-container,
-body.dark-mode .monitor {
-    opacity: 1;
-}
+
 
 
 
