@@ -14,40 +14,57 @@ body {
 
 header {
     background-color: var(--nav-bg-color);
-    padding: 15px 0;
+    padding: 12px 0;
     transition: background-color 0.5s ease; /* Smooth transition for navbar */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+/* Flexbox Navigation */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 20px;
+    overflow: auto;
+    flex-wrap: nowrap; /* No wrapping of items */
 }
 
+/* Logo Styling */
 .logo img {
-    width: 120px;
+    width: 55px; /* Standard size for logo */
+    height: 55px;
+    border-radius: 50%; /* Circular logo */
+    border: 2px solid var(--button-bg-color); /* Optional border */
+    padding: 5px;
+    flex-shrink: 0; /* Prevent the logo from shrinking */
 }
 
+/* Navigation Links Styling */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px; /* Spacing between nav links */
+    justify-content: center;
+    flex-wrap: nowrap; /* Prevent links from wrapping */
 }
 
+/* Individual Link Styling */
 .nav-links li a {
     text-decoration: none;
     font-weight: 600;
+    font-size: 1.2rem;
     color: var(--nav-text-color);
     transition: color 0.5s ease; /* Smooth transition for link colors */
 }
 
+/* Hover Effect for Links */
 .nav-links li a:hover {
-    color: var(--button-bg-color);
+    color: var(--button-bg-color); /* Change color on hover */
 }
 
+/* Toggle Button for Dark Mode */
 #mode-toggle {
     background-color: var(--button-bg-color);
     color: var(--button-text-color);
@@ -56,12 +73,14 @@ nav {
     border-radius: 5px;
     cursor: pointer;
     font-size: 18px;
+    flex-shrink: 0; /* Prevent button from shrinking */
 }
 
 #mode-toggle:hover {
-    opacity: 0.9;
+    opacity: 0.9; /* Slightly darken on hover */
 }
 
+/* Main Content Styling */
 main {
     padding: 40px 20px;
     text-align: center;
@@ -79,6 +98,7 @@ p {
     line-height: 1.6;
 }
 
+/* Footer Styling */
 footer {
     background-color: var(--nav-bg-color);
     color: var(--nav-text-color);
@@ -87,24 +107,153 @@ footer {
     transition: background-color 0.5s ease, color 0.5s ease; /* Footer transition */
 }
 
-/* Dark mode styling */
+/* Dark Mode Styling */
 body.dark-mode {
-    --bg-color: #222;
-    --text-color: #f0f0f0;
-    --nav-bg-color: #333;
-    --nav-text-color: #f0f0f0;
-    --button-bg-color: #555;
-    --button-text-color: #f0f0f0;
+    --bg-color: #1c1f26;  /* Dark background */
+    --text-color: #e0e0e0; /* Light text */
+    --nav-bg-color: #14161b; /* Darker navbar/footer */
+    --nav-text-color: #f0f0f0; /* Light navbar text */
+    --button-bg-color: #3b4d61; /* Button color */
+    --button-text-color: #f0f0f0; /* Button text color */
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+body.dark-mode header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Faint line for dark mode */
+}
+
+/* Footer Link Colors */
+.footer-info a, .footer-links a {
+    color: #1e90ff; /* Light mode link color */
+    text-decoration: none;
+}
+
+.footer-info a:hover, .footer-links a:hover {
+    text-decoration: underline;
+}
+
+body.dark-mode .footer-info a,
+body.dark-mode .footer-links a {
+    color: #9dc6ff; /* Dark mode link color */
+}
+
+body.dark-mode .footer-info a:hover,
+body.dark-mode .footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Divider */
+.footer-divider {
+    width: 80%;
+    height: 2px;
+    background-color: #888;
+    margin: 20px auto;
+}
+
+/* Dark Mode Divider */
+body.dark-mode .footer-divider {
+    background-color: #444;
+}
+
+/* Footer Social Icons */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    color: var(--text-color); /* Icons match text color */
+    font-size: 24px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social a:hover {
+    opacity: 0.7;
+}
+
+.footer-info, .footer-links {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+/* Responsive Media Queries */
 @media (max-width: 768px) {
-    nav {
-        flex-direction: column;
+    /* Logo & Nav Items Inline at Medium Screen Sizes */
+    .logo img {
+        width: 50px; /* Adjust logo size */
+        height: 50px;
     }
 
     .nav-links {
-        flex-direction: column;
+        gap: 15px; /* Slightly reduce gap between nav links */
+    }
+
+    .nav-links li a {
+        font-size: 1.1rem; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Small Screens Adjustments */
+    nav {
+        padding: 0 10px;
+    }
+
+    .logo img {
+        width: 45px; /* Adjust logo for small screens */
+        height: 45px;
+    }
+
+    .nav-links {
         gap: 10px;
     }
+
+    .nav-links li a {
+        font-size: 1rem; /* Smaller font size for small screens */
+    }
+
+    #mode-toggle {
+        padding: 8px; /* Reduce size of the dark mode toggle button */
+        font-size: 16px;
+    }
+
+    main {
+        padding: 20px 10px; /* Reduce padding for small screens */
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust heading size */
+    }
+
+    p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+}
+
+/* Footer Stays at Bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+}
+
+main {
+    flex: 1; /* Main content grows and pushes the footer to the bottom */
+}
+
+footer {
+    background-color: var(--bg-color); /* Same as main body */
+    color: var(--text-color); /* Text color same as body */
+    text-align: center;
+    padding: 20px 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Divider Styling for Footer */
+.footer-divider {
+    width: 80%;
+    height: 1px;
+    margin: 20px auto;
 }
