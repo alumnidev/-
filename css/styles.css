@@ -282,27 +282,266 @@ body.fade-in-text {
     opacity: 1;
 }
 
-/* Monitor styling */
-.monitor {
-    width: 50%;
-    height: 40%;
-    border-radius: 12px;
-    background-color: var(--monitor-bg-color);
-    border: 6px solid var(--monitor-border-color);
-    margin: 80px auto;
-    padding: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    position: relative;
+
+
+
+
+
+
+
+
+
+
+/* Section for the web structure */
+#web-structure {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    align-items: center;
+    margin: 50px 0;
+}
+
+/* General block styling */
+.block {
+    width: 80%;
+    max-width: 1000px;
+    height: 150px;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
     opacity: 0; /* Start hidden */
-    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in animation */
+    animation: fadeIn 2s ease forwards;
+}
+
+/* Specific block styles for different sections */
+.nav-block {
+    background-color: #3b82f6; /* Blue for nav */
+    height: 80px;
+    animation-delay: 0.5s; /* Delay for staggered animation */
+    animation-name: fadeInFromTop;
+}
+
+.body-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1000px;
+}
+
+.body-block {
+    background-color: #22c55e; /* Green for body */
+    height: 300px;
+    width: 70%;
+    animation-delay: 1s;
+    animation-name: fadeInFromLeft;
+}
+
+.sidebar-block {
+    background-color: #ff9800; /* Orange for sidebar */
+    height: 300px;
+    width: 25%;
+    margin-left: 20px;
+    animation-delay: 1.5s;
+    animation-name: fadeInFromRight;
+}
+
+.footer-block {
+    background-color: #ef4444; /* Red for footer */
+    height: 100px;
+    animation-delay: 2s;
+    animation-name: fadeInFromBottom;
+}
+
+/* Light mode for mode-sensitive div */
+body:not(.dark-mode) #mode-sensitive-div {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Dark mode for mode-sensitive div */
+body.dark-mode #mode-sensitive-div {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .block {
+        width: 90%;
+        font-size: 1.2rem;
+    }
+
+    .nav-block, .footer-block {
+        height: 60px;
+    }
+
+    .body-block {
+        height: 250px;
+    }
+
+    .sidebar-block {
+        height: 250px;
+    }
+
+    #mode-sensitive-div {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .block {
+        width: 95%;
+        font-size: 1rem;
+    }
+
+    .nav-block, .footer-block {
+        height: 50px;
+    }
+
+    .body-block {
+        height: 200px;
+        width: 100%; /* Full width on small screens */
+    }
+
+    .sidebar-block {
+        display: none; /* Hide sidebar on small screens */
+    }
+
+    #mode-sensitive-div {
+        height: 100px;
+    }
+}
+
+/* Fade-in animations from different directions */
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
+/*
+#mode-sensitive-div {
+    width: 80%;
+    max-width: 1000px;
+    height: 200px;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    transition: background-color 0.5s ease, color 0.5s ease;
+} */
 
 
+
+
+
+
+
+/* Section styling */
+#blocks-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-top: 50px; /* Move the section further down */
+    transition: background-color 0.5s ease;
+}
+
+/* Light mode background for section */
+body:not(.dark-mode) #blocks-section {
+    background-color: #fafafa;
+}
+
+/* Dark mode background for section */
+body.dark-mode #blocks-section {
+    background-color: #222;
+}
+
+/* Container for the two mode-sensitive divs */
+#mode-sensitive-div-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 30px;
+}
+
+/* Mode-Sensitive Div */
+.mode-sensitive-div {
+    width: 45%;
+    height: 250px; /* Adjust height as necessary */
+    padding: 30px;
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+}
+
+/* Light mode for the div */
+body:not(.dark-mode) .mode-sensitive-div {
+    background-color: #f5f5f5; /* Light background */
+}
+
+/* Dark mode for the div */
+body.dark-mode .mode-sensitive-div {
+    background-color: #333; /* Dark background */
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    #mode-sensitive-div-container {
+        flex-direction: column; /* Stack the divs vertically */
+    }
+
+    .mode-sensitive-div {
+        width: 100%; /* Full width in mobile view */
+    }
+}
 
 
 
