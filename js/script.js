@@ -113,6 +113,22 @@ setInterval(animateCircles, 3000);
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const fadeIns = document.querySelectorAll('.fade-in');
+
+    const appearOnScroll = new IntersectionObserver(function (entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+
+    fadeIns.forEach(fadeIn => {
+        appearOnScroll.observe(fadeIn);
+    });
+});
 
 
 

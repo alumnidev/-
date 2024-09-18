@@ -941,4 +941,56 @@ body.dark-mode .mode-sensitive-div {
 
 
 
+/* Dark mode for personal portfolio link */
+body.dark-mode #meet-owner-section .owner-text a {
+    color: #1e90ff; /* Lighter blue for personal portfolio link */
+}
+
+body.dark-mode #meet-owner-section .owner-text a:hover {
+    color: #63a4ff; /* Lighter on hover */
+}
+
+/* Dark mode for LinkedIn icon */
+body.dark-mode #meet-owner-section .owner-text a i {
+    color: #1e90ff; /* Change LinkedIn icon color */
+}
+
+body.dark-mode #meet-owner-section .owner-text a:hover i {
+    color: #63a4ff; /* Lighter on hover */
+}
+
+/* Add space to images in the Meet the Owner section */
+#meet-owner-section img {
+    margin-top: 20px; /* Adds 20px space above the image */
+    margin-bottom: 20px; /* Adds 20px space below the image */
+}
+
+/* Add space to images in the Vision & Values section */
+#vision-values-section img {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+/* Fade-in base state (hidden) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Optional upward motion */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* When in view (visible) */
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0); /* Return to original position */
+}
+
+
+
+
 
