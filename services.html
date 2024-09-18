@@ -3,37 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AlumniDev - Services</title>
+    <title>Our Services - AlumniDev</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header>
-    <h1>Our Services</h1>
     <nav>
-        <ul>
+        <div class="logo">
+            <img src="images/Screenshot%202024-09-16%20193207.png" alt="AlumniDev Logo">
+        </div>
+        <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+        <button id="mode-toggle">
+            <span id="icon">🌞</span>
+        </button>
     </nav>
+    <div class="navbar-separator"></div>
 </header>
 
-<section>
-    <h2>Web Development Services</h2>
-    <p>We offer the following services:</p>
-    <ul>
-        <li>Website Design</li>
-        <li>Front-End Development</li>
-        <li>Back-End Development</li>
-        <li>SEO Optimization</li>
-    </ul>
-</section>
+<main>
+    <!-- Services Overview Section -->
+    <section id="services-overview">
+        <div class="services-container">
+            <div class="services-text">
+                <h1>Our Services</h1>
+                <p>At AlumniDev, we offer a range of services to meet your web development needs, from designing responsive websites to optimizing for performance and SEO. Explore our offerings below:</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services List Section -->
+    <section id="services-list">
+        <div class="services-item">
+            <h2>Custom Web Design</h2>
+            <p>We create beautiful, user-friendly websites tailored to your brand and audience. Every design is made with responsiveness and modern UI/UX principles in mind.</p>
+        </div>
+        <div class="services-item">
+            <h2>Web Development</h2>
+            <p>From simple landing pages to complex web applications, we develop efficient, maintainable code that scales with your business.</p>
+        </div>
+        <div class="services-item">
+            <h2>E-commerce Solutions</h2>
+            <p>Need an online store? We provide end-to-end e-commerce solutions that help you sell your products and manage your business with ease.</p>
+        </div>
+        <div class="services-item">
+            <h2>SEO & Performance Optimization</h2>
+            <p>We help your website rank higher on search engines and ensure fast load times to provide the best user experience possible.</p>
+        </div>
+        <div class="services-item">
+            <h2>Maintenance & Support</h2>
+            <p>We offer ongoing support to keep your site updated, secure, and running smoothly, with regular maintenance and technical assistance.</p>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section id="call-to-action">
+        <div class="cta-container">
+            <h2>Ready to Get Started?</h2>
+            <p>Contact us today to discuss your project needs and how we can help bring your vision to life.</p>
+            <a href="contact.html" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+</main>
 
 <footer>
-    <p>&copy; 2024 Alumnidev. All rights reserved.</p>
+    <div class="footer-divider"></div>
+
+    <div class="footer-social">
+        <a href="https://www.youtube.com/@AlumniDev"><i class="fab fa-youtube"></i></a>
+        <a href="www.linkedin.com/in/eric-traccitto-391486294"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/alumnidev"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+
+    <div class="footer-info">
+        <p>Copyright © 2024 AlumniDev. All rights reserved.</p>
+        <p>Contact: <a href="mailto:alumnidevofficial@gmail.com">alumnidevofficial@gmail.com</a></p>
+    </div>
+
+    <div class="footer-links">
+        <a href="https://github.com/alumnidev">Github</a> | <a href="#">Privacy</a> | <a href="#">Terms</a>
+    </div>
 </footer>
-    <script src="js/script.js"></script>
+
+<script src="js/script.js"></script>
 </body>
 </html>

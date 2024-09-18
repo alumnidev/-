@@ -108,3 +108,13 @@ function animateCircles() {
 
 // Animate every 3 seconds
 setInterval(animateCircles, 3000);
+
+
+
+
+
+
+
+
+
+

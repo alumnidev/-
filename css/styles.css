@@ -876,3 +876,69 @@ body.dark-mode .mode-sensitive-div {
 #circle6 { bottom: 15%; right: 85%; }
 #circle7 { top: 50%; right: 100%; transform: translateY(-50%); }
 #circle8 { top: 15%; right: 85%; }
+
+
+
+
+
+
+/* General Fade-in for Sections */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Add slight upward movement for effect */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Smooth transition */
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0); /* Element returns to its original position */
+}
+
+/* Spacing for Meet the Owner Section */
+#meet-owner-section {
+    margin: 50px auto; /* Center and add vertical spacing */
+    padding: 20px; /* Add internal padding */
+    max-width: 1200px;
+}
+
+/* Spacing for Vision & Values Section */
+#vision-values-section {
+    margin: 50px auto; /* Center and add vertical spacing */
+    padding: 20px;
+    max-width: 1200px;
+}
+
+/* Responsive Spacing for Smaller Screens */
+@media screen and (max-width: 768px) {
+    #meet-owner-section,
+    #vision-values-section {
+        padding: 15px;
+        margin: 30px auto;
+    }
+}
+
+/* Footer Social Links Spacing */
+.footer-social {
+    margin: 20px 0; /* Add spacing between social icons and other footer elements */
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between icons */
+}
+
+/* Footer Links Spacing */
+.footer-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between links */
+}
+
+/* Spacing for Footer Information */
+.footer-info {
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+
+
