@@ -973,10 +973,6 @@ body.dark-mode #meet-owner-section .owner-text a:hover i {
 
 
 
-
-
-
-
 /* Fade-in base state (hidden) */
 .fade-in {
     opacity: 0;
@@ -996,6 +992,40 @@ body.dark-mode #meet-owner-section .owner-text a:hover i {
 
 
 
+/* Pulsing effect for icons */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.services-item i {
+    animation: pulse 2s infinite;
+}
+
+/* Heavy fade-in effect for titles */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.services-item h2 {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 0.5s; /* Delays for smoother effect */
+}
 
 
 
