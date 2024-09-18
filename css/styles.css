@@ -114,6 +114,47 @@ p {
     padding-bottom: 30px;
 }
 
+/* Styling for Get Started Button */
+.get-started-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 16px 32px; /* Increased padding for a larger button */
+    background-color: #007BFF; /* Button color in light mode */
+    color: #fff; /* White text for contrast */
+    text-decoration: none;
+    font-size: 1.4rem; /* Larger font size */
+    font-weight: bold;
+    border-radius: 10px; /* Slightly larger rounded corners */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    animation: pulse 2s infinite ease-in-out; /* Add a subtle pulsing effect */
+}
+
+/* Hover effects */
+.get-started-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly more growth on hover */
+    color: #fff; /* Ensure text remains visible */
+}
+
+/* Dark mode button color */
+body.dark-mode .get-started-button {
+    background-color: #28a745; /* Green button for dark mode */
+}
+
+/* Button pulsing animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.07); /* Slightly larger pulse */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
 /* Footer Styling */
 footer {
     background-color: var(--nav-bg-color);
@@ -606,7 +647,134 @@ body.dark-mode .mode-sensitive-div {
 
 
 
+/* Section styling */
+#tech-icons-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: var(--bg-color);
+}
 
+/* Responsive paragraph styling */
+.hover-instructions {
+    font-size: calc(1.5rem + 1vw); /* Adjust size based on viewport width */
+    margin-bottom: 30px;
+    color: var(--text-color);
+    text-align: center; /* Center text */
+    padding: 0 20px; /* Add padding to prevent text from touching the edges */
+}
 
+/* Ensure paragraph text doesn't overflow */
+@media (max-width: 768px) {
+    .hover-instructions {
+        font-size: calc(1.2rem + 1vw); /* Adjust font size for smaller screens */
+    }
+}
 
+/* Icons container */
+.icons-container {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Center icons vertically */
+    gap: 40px; /* Space between icons */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
+/* Individual icon box */
+.icon-box {
+    position: relative;
+    font-size: 80px;
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1.5s ease-in-out forwards, pulse 2s infinite ease-in-out; /* Apply animations */
+    transition: transform 0.3s ease;
+    /* Ensure icons are evenly distributed */
+    flex: 1 1 200px; /* Flex-grow, flex-shrink, flex-basis */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* When the icon-box becomes visible */
+.icon-box.visible {
+    opacity: 1; /* Make visible */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Slightly larger */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Tooltip styling */
+.icon-box:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -50px; /* Adjust position below the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 1;
+    visibility: visible;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+}
+
+/* Tooltip hidden by default */
+.icon-box::before {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Icon hover effect */
+.icon-box:hover {
+    transform: scale(1.2); /* Grow slightly on hover */
+}
+
+/* Icon colors */
+.fab.fa-html5 {
+    color: #E34F26;
+}
+
+.fab.fa-css3-alt {
+    color: #1572B6;
+}
+
+.fab.fa-js-square {
+    color: #F7DF1E;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .icons-container {
+        flex-direction: column; /* Stack the icons vertically on smaller screens */
+        gap: 30px; /* Adjust space between icons */
+    }
+
+    .icon-box {
+        font-size: 60px; /* Adjust icon size on mobile */
+    }
+}

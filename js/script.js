@@ -1,9 +1,8 @@
-
-//toggling the back and white button
+// Toggle between dark and light mode
 const modeToggle = document.getElementById('mode-toggle');
 const icon = document.getElementById('icon');
 
-// Check if user has a saved theme preference
+// Check if the user has a saved theme preference and apply it
 const currentTheme = localStorage.getItem('theme');
 if (currentTheme === 'dark') {
     document.body.classList.add('dark-mode');
@@ -12,6 +11,7 @@ if (currentTheme === 'dark') {
     icon.textContent = '🌞'; // Light mode icon
 }
 
+// Event listener for the dark mode toggle button
 modeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 
@@ -24,14 +24,11 @@ modeToggle.addEventListener('click', () => {
     }
 });
 
-
-
-
-
-//scroll effect on homepage
+// Scroll effect on the homepage
 document.addEventListener("DOMContentLoaded", function() {
     const divs = document.querySelectorAll(".mode-sensitive-div");
 
+    // Observer for triggering animations when elements are visible in the viewport
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -46,14 +43,29 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// Function to handle the scroll animation for tech icons
+function handleScroll() {
+    const iconsSection = document.getElementById('tech-icons-section');
+    const icons = document.querySelectorAll('.icon-box');
 
+    const sectionRect = iconsSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
 
+    if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
+        // Section is in view
+        icons.forEach(icon => {
+            icon.classList.add('visible'); // Ensure visibility class is applied
+        });
+    } else {
+        // Section is out of view
+        icons.forEach(icon => {
+            icon.classList.remove('visible'); // Remove visibility class
+        });
+    }
+}
 
-
-
-
-
-
-//the building blocks creating the webpage on the homepage
-
-
+// Initialize function on page load
+document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Run on page load to handle any icons already in view
+});
