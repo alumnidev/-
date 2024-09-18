@@ -778,3 +778,101 @@ body.dark-mode .mode-sensitive-div {
         font-size: 60px; /* Adjust icon size on mobile */
     }
 }
+
+
+
+
+/* General Spacing for the Contact Page */
+#contact {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.section-description {
+    font-size: 1.2rem;
+    margin-bottom: 50px;
+    color: #555;
+    padding: 0 20px;
+}
+
+.contact-social h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    margin: 0 15px; /* Add space between social icons */
+    font-size: 2rem;
+    color: #555;
+}
+
+.footer-social a:hover {
+    color: #000; /* Darken color on hover */
+}
+
+/* Footer Spacing */
+.footer-info, .footer-links {
+    margin: 20px 0;
+    padding: 0 20px;
+    font-size: 1rem;
+    color: #777;
+    text-align: center;
+}
+
+/* Footer Links */
+.footer-links a {
+    margin: 0 10px;
+    color: #555;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #000;
+}
+
+
+
+
+
+
+
+
+.circle-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 50px auto;
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #3498db;
+    transition: transform 1.5s ease-in-out;
+}
+
+#center-circle {
+    background-color: #2ecc71;
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#circle1 { top: 0; left: 50%; transform: translateX(-50%); }
+#circle2 { top: 15%; left: 85%; }
+#circle3 { top: 50%; left: 100%; transform: translateY(-50%); }
+#circle4 { bottom: 15%; left: 85%; }
+#circle5 { bottom: 0; left: 50%; transform: translateX(-50%); }
+#circle6 { bottom: 15%; right: 85%; }
+#circle7 { top: 50%; right: 100%; transform: translateY(-50%); }
+#circle8 { top: 15%; right: 85%; }

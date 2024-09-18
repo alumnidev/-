@@ -69,3 +69,42 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Run on page load to handle any icons already in view
 });
+
+
+
+
+
+const circles = document.querySelectorAll('.circle');
+const centerCircle = document.getElementById('center-circle');
+let combined = false;
+
+function animateCircles() {
+    if (!combined) {
+        // Move the circles into the center
+        circles.forEach(circle => {
+            if (circle !== centerCircle) {
+                circle.style.transform = 'translate(-50%, -50%) scale(0)';
+            }
+        });
+        // Grow the center circle
+        centerCircle.style.transform = 'translate(-50%, -50%) scale(2)';
+        combined = true;
+    } else {
+        // Move the circles back to their original positions
+        document.getElementById('circle1').style.transform = 'translateX(-50%)';
+        document.getElementById('circle2').style.transform = 'translate(0, 0)';
+        document.getElementById('circle3').style.transform = 'translateY(-50%)';
+        document.getElementById('circle4').style.transform = 'translate(0, 0)';
+        document.getElementById('circle5').style.transform = 'translateX(-50%)';
+        document.getElementById('circle6').style.transform = 'translate(0, 0)';
+        document.getElementById('circle7').style.transform = 'translateY(-50%)';
+        document.getElementById('circle8').style.transform = 'translate(0, 0)';
+
+        // Reset the center circle size
+        centerCircle.style.transform = 'translate(-50%, -50%) scale(1)';
+        combined = false;
+    }
+}
+
+// Animate every 3 seconds
+setInterval(animateCircles, 3000);
