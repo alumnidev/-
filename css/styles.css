@@ -380,7 +380,7 @@ body.fade-in-text {
 }
 
 .body-block {
-    background-color: #22c55e; /* Green for body */
+    background-color: #ff9800; /* Green for body */
     height: 150px;
     width: 65%;
     animation-delay: 1s;
@@ -388,7 +388,7 @@ body.fade-in-text {
 }
 
 .sidebar-block {
-    background-color: #ff9800; /* Orange for sidebar */
+    background-color: #22c55e; /* Orange for sidebar */
     height: 150px;
     width: 30%;
     margin-left: 10px;
