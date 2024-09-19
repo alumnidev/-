@@ -99,7 +99,7 @@ h1 {
 }
 
 p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
@@ -108,7 +108,7 @@ p {
 }
 
 .opener1, .opener2 {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
 
 .opener2 {
@@ -250,7 +250,7 @@ body.dark-mode .footer-divider {
     }
 
     .nav-links li a {
-        font-size: 0.8rem; /* Adjust font size */
+        font-size: 0.9rem; /* Adjust font size */
     }
 
     nav {
@@ -275,7 +275,7 @@ body.dark-mode .footer-divider {
     }
 
     .nav-links li a {
-        font-size: 0.6rem; /* Smaller font size for small screens */
+        font-size: 0.7rem; /* Smaller font size for small screens */
     }
 
     #mode-toggle {
@@ -288,11 +288,11 @@ body.dark-mode .footer-divider {
     }
 
     h1 {
-        font-size: 1rem; /* Adjust heading size */
+        font-size: 1.4rem; /* Adjust heading size */
     }
 
     p {
-        font-size: 0.6rem; /* Adjust paragraph font size */
+        font-size: 0.9rem; /* Adjust paragraph font size */
     }
 }
 
@@ -741,19 +741,19 @@ body.dark-mode .mode-sensitive-div {
 }
 
 .section-title {
-    font-size: 2.5rem;
+    font-size: 1.6rem;
     margin-bottom: 20px;
 }
 
 .section-description {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 50px;
     color: #555;
     padding: 0 20px;
 }
 
 .contact-social h2 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     margin-bottom: 20px;
 }
 
@@ -981,54 +981,3 @@ iframe {
 
 
 
-/**
-@media (max-width: 480px) {
-    body, main {
-        padding: 10px;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    .get-started-button {
-        padding: 10px 20px;
-        font-size: 1.1rem;
-    }
-
-    .logo img {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-* {
-    overflow-x: hidden;
-}
-
-nav, .icons-container, .footer-social {
-    flex-wrap: wrap;
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 2rem;
-    }
-
-    p {
-        font-size: 1rem;
-    }
-
-    .nav-links li a {
-        font-size: 0.9rem;
-    }
-
-    .footer-info, .footer-links {
-        font-size: 0.9rem;
-    }
-}
- **/
