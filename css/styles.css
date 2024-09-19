@@ -626,6 +626,20 @@ body.dark-mode .mode-sensitive-div {
     .hover-instructions {
         font-size: calc(1.2rem + 1vw); /* Adjust font size for smaller screens */
     }
+    .icon-box {
+        justify-content: center;
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hover-instructions {
+        font-size: calc(0.8rem + 1vw); /* Smaller text on mobile */
+    }
+    .icon-box {
+        justify-content: center;
+        font-size: 1.5rem;
+    }
 }
 
 /* Icons container */
@@ -682,13 +696,13 @@ body.dark-mode .mode-sensitive-div {
     }
 }
 
-/* Tooltip styling */
+/* Tooltip styling for desktop */
 .icon-box:hover::before {
     content: attr(data-tooltip);
     position: absolute;
-    bottom: -50px; /* Adjust position below the icon */
+    bottom: -50px; /* Position tooltip below the icon */
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Center the tooltip */
     background-color: rgba(0, 0, 0, 0.75);
     color: #fff;
     padding: 8px 12px;
@@ -699,7 +713,47 @@ body.dark-mode .mode-sensitive-div {
     visibility: visible;
     z-index: 10;
     transition: opacity 0.3s ease;
+    text-align: center; /* Center the text */
 }
+
+/* Force icons and tooltips on separate lines on mobile */
+@media (max-width: 768px) {
+    .icons-container {
+        display: flex;
+        flex-direction: column; /* Stack icons and tooltips vertically */
+        align-items: center; /* Center icons and tooltips */
+    }
+
+    .icon-box {
+        display: flex;
+        flex-direction: column; /* Ensure the icon and tooltip stack vertically */
+        align-items: center; /* Center the icon and tooltip */
+        margin-bottom: 10px; /* Ensure proper spacing between icon boxes */
+        position: relative; /* Create a positioning context for tooltip */
+    }
+
+    .icon-box::before {
+        content: attr(data-tooltip);
+        position: relative; /* Keep tooltip below the icon */
+        display: block; /* Tooltip on a new line */
+        background-color: rgba(0, 0, 0, 0.75);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        white-space: normal; /* Allow text wrapping */
+        opacity: 1;
+        visibility: visible;
+        z-index: 10;
+        /*margin-top: 100px; /* Add more space between icon and tooltip */
+        text-align: center;
+    }
+
+    .icon-box i {
+        margin-bottom: 20px; /* Add space between icon and tooltip */
+    }
+}
+
 
 /* Tooltip hidden by default */
 .icon-box::before {
@@ -736,6 +790,33 @@ body.dark-mode .mode-sensitive-div {
         font-size: 60px; /* Adjust icon size on mobile */
     }
 }
+/* Tooltip hidden by default on larger screens */
+.icon-box::before {
+    opacity: 0;
+    visibility: hidden;
+}
+/* Tooltip styling for mobile - always visible */
+@media (max-width: 768px) {
+    .icon-box::before {
+        content: attr(data-tooltip);
+        position: relative;
+        bottom: -30px; /* Adjust position below the icon */
+        left: 0;
+        transform: translateX(0);
+        background-color: rgba(0, 0, 0, 0.75);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.8rem; /* Smaller text for mobile */
+        white-space: normal;
+        opacity: 1;
+        visibility: visible;
+        z-index: 10;
+    }
+}
+
+
+
 
 /* General Spacing for the Contact Page */
 #contact {
