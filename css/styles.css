@@ -14,7 +14,7 @@ body {
 
 header {
     background-color: var(--nav-bg-color);
-    padding: 12px 0;
+    padding: 10px 0;
     transition: background-color 0.5s ease; /* Smooth transition for navbar */
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -24,17 +24,18 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-    overflow: auto;
+    max-width: 80%; /* Reduced width to 80% */
+    margin: 0 auto; /* Centered the nav */
+    padding: 0 10px;
+    font-size: 1rem;
+    overflow: hidden;
     flex-wrap: nowrap; /* No wrapping of items */
 }
 
 /* Logo Styling */
 .logo img {
-    width: 55px; /* Standard size for logo */
-    height: 55px;
+    width: 50px; /* Standard size for logo */
+    height: 50px;
     border-radius: 50%; /* Circular logo */
     border: 2px solid var(--button-bg-color); /* Optional border */
     padding: 5px;
@@ -45,7 +46,7 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px; /* Spacing between nav links */
+    gap: 15px; /* Spacing between nav links */
     justify-content: center;
     flex-wrap: nowrap; /* Prevent links from wrapping */
 }
@@ -54,7 +55,7 @@ nav {
 .nav-links li a {
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--nav-text-color);
     transition: color 0.5s ease; /* Smooth transition for link colors */
 }
@@ -72,8 +73,8 @@ nav {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 18px;
-    flex-shrink: 0; /* Prevent button from shrinking */
+    font-size: 14px;
+    /**flex-shrink: 0; /* Prevent button from shrinking */
 }
 
 #mode-toggle:hover {
@@ -87,7 +88,7 @@ main {
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     margin-bottom: 20px;
     opacity: 0; /* Start hidden */
     animation: fadeIn 2s ease-in-out forwards;
@@ -98,7 +99,7 @@ h1 {
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.6;
@@ -141,6 +142,15 @@ body.dark-mode .get-started-button {
     background-color: #28a745; /* Green button for dark mode */
 }
 
+/* Footer Styling */
+footer {
+    background-color: var(--nav-bg-color);
+    color: var(--nav-text-color);
+    text-align: center;
+    padding: 10px 0;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Footer transition */
+}
+
 /* Button pulsing animation */
 @keyframes pulse {
     0% {
@@ -153,16 +163,6 @@ body.dark-mode .get-started-button {
         transform: scale(1);
     }
 }
-
-/* Footer Styling */
-footer {
-    background-color: var(--nav-bg-color);
-    color: var(--nav-text-color);
-    text-align: center;
-    padding: 10px 0;
-    transition: background-color 0.5s ease, color 0.5s ease; /* Footer transition */
-}
-
 /* Dark Mode Styling */
 body.dark-mode {
     --bg-color: #1c1f26;  /* Dark background */
@@ -249,7 +249,11 @@ body.dark-mode .footer-divider {
     }
 
     .nav-links li a {
-        font-size: 1.1rem; /* Adjust font size */
+        font-size: 0.8rem; /* Adjust font size */
+    }
+
+    nav {
+        max-width: 90%; /* Wider nav bar on medium screens */
     }
 }
 
@@ -257,11 +261,12 @@ body.dark-mode .footer-divider {
     /* Small Screens Adjustments */
     nav {
         padding: 0 10px;
+        max-width: 95%; /* Wider nav bar on small screens */
     }
 
     .logo img {
-        width: 45px; /* Adjust logo for small screens */
-        height: 45px;
+        width: 40px; /* Adjust logo for small screens */
+        height: 40px;
     }
 
     .nav-links {
@@ -269,7 +274,7 @@ body.dark-mode .footer-divider {
     }
 
     .nav-links li a {
-        font-size: 1rem; /* Smaller font size for small screens */
+        font-size: 0.6rem; /* Smaller font size for small screens */
     }
 
     #mode-toggle {
@@ -289,6 +294,7 @@ body.dark-mode .footer-divider {
         font-size: 1rem; /* Adjust paragraph font size */
     }
 }
+
 
 /* Footer Stays at Bottom */
 body {
@@ -986,7 +992,7 @@ iframe {
 
 
 
-
+/**
 @media (max-width: 480px) {
     body, main {
         padding: 10px;
@@ -1012,12 +1018,11 @@ iframe {
 }
 
 * {
-    max-width: 100vw; /* Prevent overflow */
     overflow-x: hidden;
 }
 
 nav, .icons-container, .footer-social {
-    flex-wrap: wrap; /* Allow wrapping if needed */
+    flex-wrap: wrap;
 }
 
 @media (max-width: 480px) {
@@ -1037,3 +1042,4 @@ nav, .icons-container, .footer-social {
         font-size: 0.9rem;
     }
 }
+ **/
