@@ -757,8 +757,6 @@ body.dark-mode .mode-sensitive-div {
     }
 }
 
-
-
 /* Tooltip hidden by default */
 .icon-box::before {
     opacity: 0;
