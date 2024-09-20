@@ -132,8 +132,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// This will scroll to the top when the page is refreshed or reloaded
-window.addEventListener('beforeunload', function () {
-    window.scrollTo(0, 0);
+// Scroll to the top when the page is refreshed or loaded
+window.addEventListener('load', function () {
+    setTimeout(function () {
+        window.scrollTo(0, 0);
+    }, 0); // Scroll to the top on page load
 });
+
+window.addEventListener('beforeunload', function () {
+    window.scrollTo(0, 0); // Ensure it resets to the top before the page unloads
+});
+
 
