@@ -728,31 +728,35 @@ body.dark-mode .mode-sensitive-div {
         display: flex;
         flex-direction: column; /* Ensure the icon and tooltip stack vertically */
         align-items: center; /* Center the icon and tooltip */
-        margin-bottom: 10px; /* Ensure proper spacing between icon boxes */
-        position: relative; /* Create a positioning context for tooltip */
+        bottom: -50px; /* Space between each icon box */
+        position: relative;
+        z-index: 1;
+        transform: scale(1.2); /* Mimic hover effect with scale */
     }
 
     .icon-box::before {
         content: attr(data-tooltip);
-        position: relative; /* Keep tooltip below the icon */
-        display: block; /* Tooltip on a new line */
+        position: relative;
+        display: block; /* Tooltip on new line */
         background-color: rgba(0, 0, 0, 0.75);
         color: #fff;
         padding: 5px 10px;
         border-radius: 4px;
         font-size: 0.8rem;
         white-space: normal; /* Allow text wrapping */
-        opacity: 1;
+        opacity: 1; /* Always visible */
         visibility: visible;
         z-index: 10;
-        /*margin-top: 100px; /* Add more space between icon and tooltip */
+        margin-top: 10px; /* Space between icon and tooltip */
         text-align: center;
     }
 
     .icon-box i {
-        margin-bottom: 20px; /* Add space between icon and tooltip */
+        margin-bottom: 10px; /* Space below icon */
+        margin-top: 50px;
     }
 }
+
 
 
 /* Tooltip hidden by default */
