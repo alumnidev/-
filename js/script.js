@@ -132,15 +132,27 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-// Scroll to the top when the page is refreshed or loaded
+// Force scroll to top on page load and refresh
+function scrollToTop() {
+    window.scrollTo(0, 0);
+}
+
+// Add event listeners for different lifecycle events to ensure it works
+document.addEventListener('DOMContentLoaded', function () {
+    scrollToTop(); // Scroll to top when DOM is fully loaded
+});
+
 window.addEventListener('load', function () {
-    setTimeout(function () {
-        window.scrollTo(0, 0);
-    }, 0); // Scroll to the top on page load
+    setTimeout(scrollToTop, 0); // Scroll to top when everything is fully loaded
 });
 
 window.addEventListener('beforeunload', function () {
-    window.scrollTo(0, 0); // Ensure it resets to the top before the page unloads
+    scrollToTop(); // Reset scroll before the page is refreshed or closed
+});
+
+// For iPhone-specific handling (using orientation to force scroll reset)
+window.addEventListener('orientationchange', function () {
+    scrollToTop(); // Force scroll to top when device orientation changes
 });
 
 
